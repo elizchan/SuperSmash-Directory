@@ -36,6 +36,7 @@ app.use((req, res, next)=>{
 })
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
+app.use('/smash', require('./controllers/smash.js'))
 
 app.get('/', (req, res)=>{
     res.render('home')
