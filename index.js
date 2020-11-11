@@ -7,6 +7,7 @@ const passport = require('./config/ppConfig.js')
 const flash = require('connect-flash')
 const isLoggedIn = require('./middleware/isLoggedIn')
 const axios = require('axios')
+const methodOverride = require('method-override')
 
 //ejs and ejs layouts
 app.set('view engine', 'ejs')
@@ -35,6 +36,9 @@ app.use((req, res, next)=>{
     res.locals.currentUser = req.user
     next() //move on to the next piece of middleware
 })
+
+//method override middleware
+app.use(methodOverride('_method'))
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/smash', require('./controllers/smash.js'))
