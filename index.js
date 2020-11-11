@@ -39,7 +39,7 @@ app.use('/auth', require('./controllers/auth.js'))
 app.use('/smash', require('./controllers/smash.js'))
 
 app.get('/', (req, res)=>{
-    res.render('home')
+    res.render('index')
 })
 
 app.get('/profile', isLoggedIn, (req, res)=>{

@@ -1,5 +1,8 @@
-<h2>List of Favorite Champions</h2>
+<h2><%= currentUser.name %>'s List of Favorite Champions </h2>
 <% favorites.forEach(favoriteChampion => { %>
-    <li><%= favoriteChampion.name %></li>
+    <li>
+        <%= favoriteChampion.name %>
+        <%= favoriteChampion.mainImageUrl %>
+    </li>
     <br>
 <% }) %>
