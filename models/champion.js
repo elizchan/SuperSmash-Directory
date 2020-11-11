@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   champion.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    image: DataTypes.STRING,
+    ownerId: DataTypes.INTEGER,
+    displayName: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'champion',
