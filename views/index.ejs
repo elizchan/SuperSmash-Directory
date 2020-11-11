@@ -1,18 +1,15 @@
 <p class="text-center">
     <a href="/smash">Favorites</a>
-  </p>
+</p>
 <h2>List of Champions:</h2>
 
 <% champions.forEach(champion => { %>
     <div class="well">
         <h2><%= champion.Name %></h2>
-        <img<%= champion.ThumbnailUrl %>
+        <img><%= champion.ThumbnailUrl %></img>
         <form method="POST" action="/smash">
             <input hidden type="text" name="Name" value="<%= champion.Name %>">
             <button class="btn btn-primary" type="submit">Add to Favorites!</button>
-        </form>
-        <form method="POST" action="">
-            <button type="submit">Remove</button>
         </form>
     </div>
 <% }) %>

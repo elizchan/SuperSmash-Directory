@@ -1,10 +1,14 @@
-<h2> List of Favorite Champions </h2>
-<% favorites.forEach(favoriteChampion => { %>
+<h2> <%= currentUser.name %>'s List of Favorite Champions </h2>
+<% favorites.forEach((favoriteChampion, i) => { %>
     <p>
         <%= favoriteChampion.name %>
     </p>
     <p>
         <%= favoriteChampion.image %>
     </p>
+    <form method="POST" action="/smash/<%= i %>/?_method=DELETE">
+        <input hidden type="text" name="name" value="<%= favoriteChampion.name %>">
+        <button type="submit">Remove</button>
+    </form>
     <br>
 <% }) %>
