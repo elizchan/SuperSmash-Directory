@@ -4,7 +4,7 @@
         <%= favoriteChampion.name %>
     </p>
     <p>
-        <%= favoriteChampion.image %>
+        <img src="<%= favoriteChampion.image %>">
     </p>
     <form method="POST" action="/smash/<%= i %>/?_method=DELETE">
         <input hidden type="text" name="name" value="<%= favoriteChampion.name %>">

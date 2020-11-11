@@ -39,9 +39,13 @@ app.use((req, res, next)=>{
 
 //method override middleware
 app.use(methodOverride('_method'))
+
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/smash', require('./controllers/smash.js'))
+
+//bootstrap middleware
+app.use(express.static(__dirname + '/public'))
 
 //get api info route
 app.get('/', (req, res)=>{
