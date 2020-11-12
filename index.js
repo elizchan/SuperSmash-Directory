@@ -59,6 +59,19 @@ app.get('/', (req, res)=>{
     })
 })
 
+app.get('/:idx', (req, res)=>{
+    const smashUrl = 'https://api.kuroganehammer.com/api/characters'
+    axios.get(smashUrl)
+    .then(response=>{
+        console.log('@@@@@@@@@@@@@@@@@@', response.data)
+        res.render('show', {champion: response.data})
+        console.log('@@@@@@@@@@@@@@@@@@', response.data)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
+
 app.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile')
 })

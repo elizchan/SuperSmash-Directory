@@ -1,3 +1,8 @@
 body {
-    background-color: rgba(243, 199, 255, 1)
+    background-color: rgba(254, 199, 252, 1);
+    font-family: 'Concert One', cursive;
+}
+
+header {
+    text-align: center;
 }

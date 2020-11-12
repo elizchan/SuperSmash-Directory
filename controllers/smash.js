@@ -26,18 +26,6 @@ router.get('/', (req, res) => {
     })
 })
 
-// //SHOW route
-// router.get('/:id', (req, res)=>{
-//     const smashUrl = 'https://api.kuroganehammer.com/api/characters'
-//     axios.get(smashUrl)
-//     .then(response=>{
-//         res.render('show', {champions: response.data})
-//         console.log(response.data)
-//     })
-//     .catch(err=>{
-//         console.log(err)
-//     })
-// })
 //DELETE favorites route
 router.delete('/:idx', (req, res) => {
     db.champion.destroy({
