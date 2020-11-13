@@ -1,19 +1,3 @@
-* create a node app
-* .gitignore
-* install and set up express
-* created home route
-* created controller called auth.js
-* created get and post routes for login, signup in auth.js
-* installed ejs and express-ejs-layouts
-* created views folder with auth folder and layouts.ejs
-* created login.ejs and signup.ejs
-* created login and sign up forms
-* npm i sequelize pg, then initialized sequelize
-* changed database name and dialect in config.json
-* created db and model
-* migrated model
-* required db in controller
-
 ## How to set up:
 1. fork and clone
 

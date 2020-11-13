@@ -63,8 +63,9 @@ app.get('/:idx', (req, res)=>{
     const smashUrl = 'https://api.kuroganehammer.com/api/characters'
     axios.get(smashUrl)
     .then(response=>{
+        let championIndex = req.params.idx
         console.log('@@@@@@@@@@@@@@@@@@', response.data)
-        res.render('show', {champion: response.data})
+        res.render('show', {champion: response.data[championIndex]})
         console.log('@@@@@@@@@@@@@@@@@@', response.data)
     })
     .catch(err=>{
