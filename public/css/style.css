@@ -8,11 +8,15 @@ header {
 }
 
 h1 {
-    font-size: 37px;
+    font-size: 38px;
 }
 
 h2 {
     font-size: 33px;
+}
+
+h3 {
+    font-size: 30px;
 }
 
 p {
@@ -21,4 +25,20 @@ p {
 
 .movename {
     font-size: 25px;
+}
+
+.faveslist {
+    text-align: center;
+}
+
+.signup, .login {
+    text-align: center;
+}
+
+.signupdiv, .logindiv {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color:#6895fd!important;
 }

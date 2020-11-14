@@ -1,4 +1,15 @@
-##
+# SuperSmash Dev
+## Concept
+A directory consisting of available SuperSmash characters in SuperSmash 4 that you can add to your account
+
+## ERD
+## Wireframes
+
+## Techonologies Used:
+* Bootstrap
+* Node.js
+* Postgres SQL
+
 ## How to set up:
 1. fork and clone
 
@@ -42,6 +53,4 @@ sequelize db:migrate
 
 7. Run `nodemon` to start up app
 
-## ERD
-## Wireframes
 ## Stretch Goals
