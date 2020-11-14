@@ -7,22 +7,25 @@ const axios = require('axios')
 router.post('/', (req, res)=>{
     db.champion.create({name: req.body.Name, image: req.body.MainImageUrl})
     .then(createdFave=>{
-        console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        console.log(createdFave)
-        res.redirect('/smash')
-        console.log(createdFave)
+        req.user.addChampion(createdFave)
+        .then((newAssocation)=>{
+            console.log(createdFave)
+            res.redirect('/smash')
+        })
     })
     .catch(err=>{
         console.log('there is an error', err)
     })
 })
-//GET /champions - return pg with favorited champions
+//GET /smash - return pg with favorited champions
 router.get('/', (req, res) => {
-    db.champion.findAll()
-    .then(favorites=>{
-        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-        console.log(favorites)
-        res.render('favorites', {favorites: favorites})
+    db.user.findOne({
+        where: {id: req.user.id},
+        include: [db.champion]
+    })
+    .then(foundUser=>{
+        console.log(foundUser.champions)
+        res.render('favorites', {favorites: foundUser.champions})
     })
 })
 

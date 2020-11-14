@@ -52,21 +52,20 @@ app.get('/', (req, res)=>{
     const smashUrl = 'https://api.kuroganehammer.com/api/characters'
     //use request to get API
     axios.get(smashUrl).then(function(apiResponse) { 
-        console.log('hi..........................')
         console.log(apiResponse.data)
         const champions = apiResponse.data
         res.render('index', {champions: champions})
     })
 })
 
-app.get('/:idx', (req, res)=>{
-    const smashUrl = 'https://api.kuroganehammer.com/api/characters'
+//SHOW ROUTE
+app.get('/details/:ownerid', (req, res)=>{
+    const smashUrl = `https://api.kuroganehammer.com/api/characters/${req.params.ownerid}/movements`
     axios.get(smashUrl)
     .then(response=>{
-        let championIndex = req.params.idx
+        console.log(response)
         console.log('@@@@@@@@@@@@@@@@@@', response.data)
-        res.render('show', {champion: response.data[championIndex]})
-        console.log('@@@@@@@@@@@@@@@@@@', response.data)
+        res.render('show', {movements: response.data})
     })
     .catch(err=>{
         console.log(err)

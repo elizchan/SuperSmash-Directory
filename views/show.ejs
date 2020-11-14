@@ -1,9 +1,8 @@
 <h1>Info about Champion</h1>
 
-<h2><%= champion.DisplayName %></h2>
-<img src="<%= champion.MainImageUrl %>">
-<p>Color Theme: <%= champion.ColorTheme %></p>
-<p>Owner Id: <%= champion.OwnerId %></p>
+<% movements.forEach(move=>{ %>
+    <%= move.Name %>
+<% }) %>
 
-    
+
 

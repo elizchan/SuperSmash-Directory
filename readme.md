@@ -1,3 +1,4 @@
+##
 ## How to set up:
 1. fork and clone
 
@@ -40,3 +41,6 @@ sequelize db:migrate
 6. Add `SESSION_SECRET` and `PORT` environment variables in a `.env` file(can be any string)
 
 7. Run `nodemon` to start up app
+
+## ERD
+##
