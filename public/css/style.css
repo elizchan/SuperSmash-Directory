@@ -6,3 +6,19 @@ body {
 header {
     text-align: center;
 }
+
+h1 {
+    font-size: 37px;
+}
+
+h2 {
+    font-size: 33px;
+}
+
+p {
+    font-size: 19px;
+}
+
+.movename {
+    font-size: 25px;
+}

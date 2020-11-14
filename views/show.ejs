@@ -1,7 +1,9 @@
-<h1>Info about Champion</h1>
+<h2>Info about Champion!</h1>
+<a href="/">&larr; Back to Home Page</a>
 
 <% movements.forEach(move=>{ %>
-    <%= move.Name %>
+    <li class="movename"><%= move.Name %></li>
+    <p><%= move.Value %></p>
 <% }) %>
 
 

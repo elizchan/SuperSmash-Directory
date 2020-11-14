@@ -43,4 +43,5 @@ sequelize db:migrate
 7. Run `nodemon` to start up app
 
 ## ERD
-##
+## Wireframes
+## Stretch Goals

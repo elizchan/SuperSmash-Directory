@@ -49,7 +49,7 @@ app.use(express.static(__dirname + '/public'))
 
 //get api info route
 app.get('/', (req, res)=>{
-    const smashUrl = 'https://api.kuroganehammer.com/api/characters'
+    const smashUrl = 'https://api.kuroganehammer.com/api/characters/'
     //use request to get API
     axios.get(smashUrl).then(function(apiResponse) { 
         console.log(apiResponse.data)
