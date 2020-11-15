@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
         include: [db.champion]
     })
     .then(foundUser=>{
-        console.log(foundUser.champions)
+        // console.log(foundUser.champions)
         res.render('favorites', {favorites: foundUser.champions})
     })
 })

@@ -8,6 +8,7 @@ const flash = require('connect-flash')
 const isLoggedIn = require('./middleware/isLoggedIn')
 const axios = require('axios')
 const methodOverride = require('method-override')
+const db = require('./models/index.js')
 
 //ejs and ejs layouts
 app.set('view engine', 'ejs')
@@ -70,6 +71,22 @@ app.get('/details/:ownerid', (req, res)=>{
     })
     .catch(err=>{
         console.log(err)
+    })
+})
+
+//PUT route for user profile pg
+app.put('/profile', (req, res) => {
+    db.user.update({
+        name: req.body.name
+    },
+    {
+        where: {
+            name: req.session.passport.name
+        }
+    })
+    .then(updatedUser => {
+        console.log("new user: ",updatedUser)
+        res.redirect('/profile')
     })
 })
 

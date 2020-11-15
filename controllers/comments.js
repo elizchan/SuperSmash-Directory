@@ -21,7 +21,7 @@ router.get('/', (req, res)=>{
     db.comment.findAll()
     .then(comments => {
         console.log(req.session)
-        res.render('comments', {comments: comments})
+        res.render('comments', {comments: comments, userNames: userNames})
     })
 })
 
