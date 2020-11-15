@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const axios = require('axios')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 //POST - receive name of champion and add it to database
 router.post('/', (req, res)=>{
@@ -17,6 +18,7 @@ router.post('/', (req, res)=>{
         console.log('there is an error', err)
     })
 })
+
 //GET /smash - return pg with favorited champions
 router.get('/', (req, res) => {
     db.user.findOne({

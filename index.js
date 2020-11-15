@@ -43,6 +43,7 @@ app.use(methodOverride('_method'))
 //controller middleware
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/smash', require('./controllers/smash.js'))
+app.use('/comments', require('./controllers/comments.js'))
 
 //bootstrap middleware
 app.use(express.static(__dirname + '/public'))

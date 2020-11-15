@@ -1,0 +1,25 @@
+<h1>Message Board</h1>
+
+<form action="/comments" method="POST">
+    <div class="form-group">
+        <label for="commentContent">Comment Content</label>
+        <textarea type="text" class="form-control" id="commentContent" name="commentContent" required></textarea>
+        <label for="userName">Username</label>
+        <input type="text" class="form-control" id="userName" name="userName" required></input>
+        <input class="btn btn-primary" type="submit"></input>
+    </div>
+</form>
+
+<% comments.forEach(function(c, i){ %>
+    <div class="well">
+        <p>
+            <%= c.content %>
+        </p>
+        <p><%= c.userName %></p>
+    </div>
+    <form method="POST" action="/comments/<%= i %>/?_method=DELETE">
+        <input hidden type="text" name="name" value="<%= c.content %>">
+        <button class="btn btn-primary" type="submit">Remove</button>
+    </form>
+<% }) %>
+
