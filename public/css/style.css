@@ -42,3 +42,8 @@ p {
 .btn-primary {
     background-color:#6895fd!important;
 }
+
+.well {
+    width: 350px;
+    text-align: center;
+}

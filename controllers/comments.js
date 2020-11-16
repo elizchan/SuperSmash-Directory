@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const axios = require('axios')
 const methodOverride = require('method-override')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 //method override middleware
 router.use(methodOverride('_method'))
@@ -38,16 +39,25 @@ router.get('/', (req, res)=>{
 
 //DELETE comment route
 router.delete('/:idx', (req, res) => {
-    db.comment.destroy({
+    db.comment.findOne({
         where: {
             id: req.params.idx
         }
     })
-    .then(deleted => {
-        res.redirect('/comments')
+    .then(foundComment=>{
+        if(req.user.id === foundComment.userId){
+            db.comment.destroy(foundComment)
+            .then(deleted =>{
+                res.redirect('/comments')
+            })
+        } else {
+            req.flash('error', "you are not the correct user! please delete your own!")
+            res.redirect('/comments')
+        }
     })
     .catch(err => {
         console.log(err)
     })
 })
+
 module.exports = router
