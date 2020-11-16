@@ -64,7 +64,7 @@ sequelize db:migrate
 
 ## Planning/Creation Process
 ### ERD
-<img src="https://i.ibb.co/g91yYJt/ERD-for-proj-2.png" alt="ERD-for-proj-2" border="0">
+<img src="https://i.ibb.co/Lp8kgnb/Screen-Shot-2020-11-16-at-5-09-02-PM.png" alt="Screen-Shot-2020-11-16-at-5-09-02-PM" border="0">
 website used: lucidchart.com
 
 ### Wireframes
