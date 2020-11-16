@@ -65,8 +65,6 @@ app.get('/details/:ownerid', (req, res)=>{
     const smashUrl = `https://api.kuroganehammer.com/api/characters/${req.params.ownerid}/movements`
     axios.get(smashUrl)
     .then(response=>{
-        console.log(response)
-        console.log('@@@@@@@@@@@@@@@@@@', response.data)
         res.render('show', {movements: response.data})
     })
     .catch(err=>{
