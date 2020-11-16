@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const axios = require('axios')
+const methodOverride = require('method-override')
+
+//method override middleware
+router.use(methodOverride('_method'))
 
 //POST new messages in /comments
 router.post('/', (req, res)=>{
@@ -13,6 +17,9 @@ router.post('/', (req, res)=>{
     .then(comment => {
         res.redirect('/comments')
     })
+    .catch(err=>{
+        console.log(err)
+    })
 })
 
 //GET all messages in /comments
@@ -21,7 +28,7 @@ router.get('/', (req, res)=>{
     db.comment.findAll()
     .then(comments => {
         console.log(req.session)
-        res.render('comments', {comments: comments, userNames: userNames})
+        res.render('comments', {comments: comments})
     })
 })
 
@@ -29,7 +36,7 @@ router.get('/', (req, res)=>{
 router.delete('/:idx', (req, res) => {
     db.comment.destroy({
         where: {
-            content: req.body.content
+            content: req.body.commentContent
         }
     })
     .then(deleted => {

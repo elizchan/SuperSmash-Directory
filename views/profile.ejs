@@ -4,5 +4,6 @@
 <form method="POST" action="/profile/?_method=PUT">
     <label for="newName">New Username</label>
     <input type="text" name="newName" id="newName"></input>
+    <input type="hidden" name="userId" value="<%= currentUser.id %>">
     <button class="btn btn-primary" type="submit">Update</button>
 </form>

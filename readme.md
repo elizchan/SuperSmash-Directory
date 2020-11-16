@@ -4,6 +4,8 @@ A directory consisting of available SuperSmash characters in SuperSmash 4 that y
 
 ## ERD
 ## Wireframes
+<img src="https://i.ibb.co/ZNDZ8g0/20201106-200710.jpg" alt="20201106-200710" border="0">
+<img src="https://i.ibb.co/nr6T45p/20201106-200814.jpg" alt="20201106-200814" border="0">
 
 ## Techonologies Used:
 * Bootstrap
@@ -54,3 +56,7 @@ sequelize db:migrate
 7. Run `nodemon` to start up app
 
 ## Stretch Goals
+* let users update passwords
+
+## Sources
+API Info:

@@ -77,16 +77,19 @@ app.get('/details/:ownerid', (req, res)=>{
 //PUT route for user profile pg
 app.put('/profile', (req, res) => {
     db.user.update({
-        name: req.body.name
+        name: req.body.newName
     },
     {
         where: {
-            name: req.session.passport.name
+            id: req.body.userId
         }
     })
     .then(updatedUser => {
         console.log("new user: ",updatedUser)
         res.redirect('/profile')
+    })
+    .catch(err=>{
+        console.log(err)
     })
 })
 

@@ -3,6 +3,9 @@ const router = express.Router()
 const db = require('../models')
 const axios = require('axios')
 const isLoggedIn = require('../middleware/isLoggedIn')
+const methodOverride = require('method-override')
+//method override middleware
+router.use(methodOverride('_method'))
 
 //POST - receive name of champion and add it to database
 router.post('/', (req, res)=>{

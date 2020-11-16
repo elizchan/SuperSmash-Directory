@@ -4,8 +4,10 @@
     <div class="form-group">
         <label for="commentContent">Comment Content</label>
         <textarea type="text" class="form-control" id="commentContent" name="commentContent" required></textarea>
-        <label for="userName">Username</label>
-        <input type="text" class="form-control" id="userName" name="userName" required></input>
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="userName" value="<%= currentUser.name %>">
+        <input type="hidden" name="userId" value="<%= currentUser.id %>">
         <input class="btn btn-primary" type="submit"></input>
     </div>
 </form>
