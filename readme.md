@@ -10,6 +10,15 @@ A directory consisting of available SuperSmash characters in SuperSmash 4 that y
 * EJS
 * SuperSmash API
 
+## User Stories
+* As a user, I should be able to see a home page with SuperSmash champions, a link to see more info on specific champion and an Add to Favorites button with the title of the website and the option to log in or sign up.
+* As a user, I should be able to log in or sign up to access the add to favorites button. 
+* As a user, as soon as I am logged in, I should see a message saying that I am logged in with a change in the hyperlinks under the title of the webpage to say Log Out, Profile, Favorites, Messages
+* As a user, I am able to access my profile page and update my username with the provided field if I choose to do so
+* As a user, I am able to see my added champions' name and associated image
+* As a user, I am able to submit comments on the message board and other user's comments and an associated Remove button.
+* As a user, I am only able to delete my own comments on the message board
+
 ## How to set up:
 1. fork and clone
 
@@ -55,14 +64,32 @@ sequelize db:migrate
 
 ## Planning/Creation Process
 ### ERD
+<img src="https://i.ibb.co/g91yYJt/ERD-for-proj-2.png" alt="ERD-for-proj-2" border="0">
+website used: lucidchart.com
+
 ### Wireframes
 <img src="https://i.ibb.co/ZNDZ8g0/20201106-200710.jpg" alt="20201106-200710" border="0">
 <img src="https://i.ibb.co/nr6T45p/20201106-200814.jpg" alt="20201106-200814" border="0">
 
+## Creating Routes
+| Route             | Crud  | Explanation                |
+| ------------------| ------| ---------------------------|
+| "/"               | READ  | Renders home page          |
+| "/"               | CREATE| creates user's favorites   |
+| "/smash"          | READ  | Grabs the user's favorites |
+| "/smash"          | DELETE| Delete's user's favorite   |
+| "/profile"        | READ  | Grabs user's current name  |
+| "/profile"        | UPDATE| Update user's username     |
+| "/details/:ownerid| READ  | Grabs the champion data    |
+| "/comments"       | READ  | Grabs all comments made    |
+| "/comments"       | DELETE| Deletes user's comment     |
+
 ## challenges
 * Figuring out how to use the API to get information on a specific champion
-* Figuring out how to store the username from the comment form to the comments table
+* Figuring out how to store the userId of the comment made into the comment table
+* Figuring out how to correctly use bootstrap
 
 ## Stretch Goals
 * let users update passwords and their comments and letting them get a link of all the comments they made
-* only allowing users to delete their own comments on the message board
+* making the remove button on the message board only show up for the current user's comments
+* styling this to be more appealing
