@@ -75,7 +75,7 @@ app.get('/details/:ownerid', (req, res)=>{
 //PUT route for user profile pg
 app.put('/profile', (req, res) => {
     db.user.update({
-        name: req.body.newName
+        name: req.body.newName,
     },
     {
         where: {

@@ -12,7 +12,7 @@ router.post('/', (req, res)=>{
     console.log('@@@@@@@@@@@@@@@',req)
     db.comment.create({
         content: req.body.commentContent,
-        userName: req.body.userName
+        userId: req.user.id
     })
     .then(comment => {
         res.redirect('/comments')
@@ -25,9 +25,13 @@ router.post('/', (req, res)=>{
 //GET all messages in /comments
 router.get('/', (req, res)=>{
     console.log('@@@@@@@@@@@@@@@',req)
-    db.comment.findAll()
+    db.comment.findAll({
+        include: [db.user]
+    })
     .then(comments => {
-        console.log(req.session)
+        comments.forEach(comment=>{
+            console.log(comment.user.name)
+        })
         res.render('comments', {comments: comments})
     })
 })
@@ -36,7 +40,7 @@ router.get('/', (req, res)=>{
 router.delete('/:idx', (req, res) => {
     db.comment.destroy({
         where: {
-            content: req.body.commentContent
+            id: req.params.idx
         }
     })
     .then(deleted => {

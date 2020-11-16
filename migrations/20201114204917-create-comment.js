@@ -11,9 +11,6 @@ module.exports = {
       content: {
         type: Sequelize.TEXT
       },
-      userName: {
-        type: Sequelize.STRING
-      },
       userId: {
         type: Sequelize.INTEGER
       },

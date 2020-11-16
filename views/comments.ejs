@@ -6,20 +6,18 @@
         <textarea type="text" class="form-control" id="commentContent" name="commentContent" required></textarea>
     </div>
     <div class="form-group">
-        <input type="hidden" name="userName" value="<%= currentUser.name %>">
-        <input type="hidden" name="userId" value="<%= currentUser.id %>">
         <input class="btn btn-primary" type="submit"></input>
     </div>
 </form>
 
-<% comments.forEach(function(c, i) { %>
+<% comments.forEach(function(c) { %>
     <div class="well">
         <p>
             <%= c.content %>
         </p>
-        <p><%= c.userName %></p>
+        <p><%= c.user.name %></p>
     </div>
-    <form method="POST" action="/comments/<%= i %>/?_method=DELETE">
+    <form method="POST" action="/comments/<%= c.id %>/?_method=DELETE">
         <input hidden type="text" name="commentContent" value="<%= c.content %>">
         <button class="btn btn-primary" type="submit">Remove</button>
     </form>
