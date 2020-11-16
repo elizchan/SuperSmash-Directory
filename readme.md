@@ -68,8 +68,8 @@ sequelize db:migrate
 website used: lucidchart.com
 
 ### Wireframes
-<img src="https://i.ibb.co/ZNDZ8g0/20201106-200710.jpg" alt="20201106-200710" border="0">
-<img src="https://i.ibb.co/nr6T45p/20201106-200814.jpg" alt="20201106-200814" border="0">
+<img src='https://i.postimg.cc/mckKxc9F/20201116-172319.jpg' border='0' alt='20201116-172319'/>
+<img src='https://i.postimg.cc/LJDMFK0G/20201116-172309.jpg' border='0' alt='20201116-172309'/>
 
 ## Creating Routes
 | Route             | Crud  | Explanation                |
