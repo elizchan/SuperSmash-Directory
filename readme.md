@@ -73,7 +73,7 @@ website used: lucidchart.com
 
 ### API Source
 This is the link to the API I chose to use for this project.
-<a href="https://api.kuroganehammer.com/api/characters"></a>
+https://api.kuroganehammer.com/api/characters
 
 ### Creating Routes
 | Route             | Crud  | Explanation                |
