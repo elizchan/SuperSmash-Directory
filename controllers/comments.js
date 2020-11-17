@@ -45,8 +45,11 @@ router.delete('/:idx', (req, res) => {
         }
     })
     .then(foundComment=>{
+        console.log(foundComment)
         if(req.user.id === foundComment.userId){
-            db.comment.destroy(foundComment)
+            db.comment.destroy({
+                where: {id: foundComment.id}
+            })
             .then(deleted =>{
                 res.redirect('/comments')
             })
