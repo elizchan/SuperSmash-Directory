@@ -71,7 +71,11 @@ website used: lucidchart.com
 <img src='https://i.postimg.cc/0N0vwD2Z/20201116-172319.jpg' border='0' alt='20201116-172319'/>
 <img src='https://i.postimg.cc/k53M87NM/20201116-172309.jpg' border='0' alt='20201116-172309'/>
 
-## Creating Routes
+### API Source
+This is the link to the API I chose to use for this project.
+<a href="https://api.kuroganehammer.com/api/characters"></a>
+
+### Creating Routes
 | Route             | Crud  | Explanation                |
 | ------------------| ------| ---------------------------|
 | "/"               | READ  | Renders home page          |
@@ -92,4 +96,4 @@ website used: lucidchart.com
 ## Stretch Goals
 * let users update passwords and their comments and letting them get a link of all the comments they made
 * making the remove button on the message board only show up for the current user's comments
-* styling this to be more appealing
+* understanding bootstrap more so the styling is better
