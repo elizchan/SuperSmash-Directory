@@ -97,3 +97,4 @@ https://api.kuroganehammer.com/api/characters
 * let users update passwords and their comments and letting them get a link of all the comments they made
 * making the remove button on the message board only show up for the current user's comments
 * understanding bootstrap more so the styling is better
+* allowing users to respond to other comments they see in the message board
