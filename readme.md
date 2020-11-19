@@ -1,4 +1,5 @@
 # SuperSmash Directory
+**Link to App:** https://supersmash-directory.herokuapp.com/
 ## Concept
 A directory consisting of available SuperSmash characters in SuperSmash 4 that you can add to your account and allows you to post messages/comments to the message board for other users to see.
 
