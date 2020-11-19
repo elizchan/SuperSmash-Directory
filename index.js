@@ -95,6 +95,6 @@ app.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile')
 })
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 8000, ()=>{
     console.log('listening to 8000')
 })
