@@ -77,17 +77,17 @@ This is the link to the API I chose to use for this project.
 https://api.kuroganehammer.com/api/characters
 
 ### Creating Routes
-| Route             | Crud  | Explanation                |
-| ------------------| ------| ---------------------------|
-| "/"               | READ  | Renders home page          |
-| "/"               | CREATE| creates user's favorites   |
-| "/smash"          | READ  | Grabs the user's favorites |
-| "/smash"          | DELETE| Delete's user's favorite   |
-| "/profile"        | READ  | Grabs user's current name  |
-| "/profile"        | UPDATE| Update user's username     |
-| "/details/:ownerid| READ  | Grabs the champion data    |
-| "/comments"       | READ  | Grabs all comments made    |
-| "/comments"       | DELETE| Deletes user's comment     |
+| URL               | Crud  | Route | Explanation                |
+| ------------------| ------| ------|----------------------------|
+| "/"               | READ  | GET   |Renders home page          |
+| "/"               | CREATE| POST  |creates user's favorites   |
+| "/smash"          | READ  | GET   |Grabs the user's favorites |
+| "/smash"          | DELETE| DELETE|Delete's user's favorite   |
+| "/profile"        | READ  | GET   |Grabs user's current name  |
+| "/profile"        | UPDATE| POST  |Update user's username     |
+| "/details/:ownerid| READ  | GET   |Grabs the champion data    |
+| "/comments"       | READ  | GET   |Grabs all comments made    |
+| "/comments"       | DELETE| DELETE|Deletes user's comment     |
 
 ## challenges
 * Figuring out how to use the API to get information on a specific champion
